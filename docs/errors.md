@@ -3,10 +3,10 @@ Errors in the OneDriveSDK for iOS behave just like errors returned from the serv
 
 Anytime you make a request against the service there is the potential for an error. You will see that all requests to the service can return an error. The error returned is a native `NSError` object, and inside of the NSErrors user dictionary you can obtain the ODError object.
 
-## Checking the Error
+## Checking the error
 There are a few different types of errors that can occur during a network call. We have provided some helper methods to make it easy to check what kind of error occurred. These error types are defined in [ODAuthContants.h](../OneDriveSDK/Common/ODAuthConstants.h).
 
-### Authentication Errors
+### Authentication errors
 
 There can be errors during the authentication process. If the error occurred during the authentication process, the error will have the domain `OD_AUTH_ERROR_DOMAIN`, which is defined as `com.microsoft.onedrivesdk.auth` in [ODAuthContants.h](../OneDriveSDK/Common/ODAuthConstants.h).
 
@@ -24,7 +24,7 @@ In this case, you can also call `[error IsAuthCancelError]` to check if the user
 
 See ODAuthConstants.h for a list of error codes during authentication. To retrieve any info about the error, look in the userInfo dictionary with the key `OD_AUTH_ERROR_KEY`, which is defined as `ODAuthErrorKey`.
 
-### Client Errors
+### Client errors
 
 To check if an error is a client error, you can call `[error isClientError]` and  `[error clientError]`, like this:
 
